@@ -1,6 +1,6 @@
-# casa_salud_del_llano_app
+# Casa Salud Del Llano App
 
-A new Flutter project.
+Este proyecto ha sido desarrollado en Flutter, Dart, se basa el proyecto en una empresa de droguerías.
 
 ## Getting Started
 
