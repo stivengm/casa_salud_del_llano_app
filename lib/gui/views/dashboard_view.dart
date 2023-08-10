@@ -18,11 +18,11 @@ class DashboardView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Total tiendas: 4"),
+          const Text("Total tiendas: 4"),
           const SizedBox(height: 20.0),
-          Text("Total productos: 100"),
+          const Text("Total productos: 100"),
           const SizedBox(height: 20.0),
-          Text("Total productos en tiendas: 300"),
+          const Text("Total productos en tiendas: 300"),
           const SizedBox(height: 20.0),
           PrimaryButton(text: 'Tiendas', onPressed: () => Navigator.pushNamed(context, 'stores')),
           const SizedBox(height: 20.0),
