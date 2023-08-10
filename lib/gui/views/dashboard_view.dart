@@ -15,7 +15,10 @@ class DashboardView extends StatelessWidget {
   Widget _body(context) {
     return Column(
       children: [
-        PrimaryButton(text: 'Tiendas', onPressed: () => Navigator.pushNamed(context, 'stores'))
+        const SizedBox(height: 20.0),
+        PrimaryButton(text: 'Tiendas', onPressed: () => Navigator.pushNamed(context, 'stores')),
+        const SizedBox(height: 20.0),
+        PrimaryButton(text: 'Productos', onPressed: () => Navigator.pushNamed(context, 'stores'))
       ],
     );
   }
