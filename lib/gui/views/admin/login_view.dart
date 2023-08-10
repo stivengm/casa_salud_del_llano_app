@@ -11,6 +11,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   bool _passwordVisible = true;
   bool _isButtonDisabled = true;
+  bool isLoading = false;
 
   TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -101,7 +102,17 @@ class _LoginViewState extends State<LoginView> {
               ),
             ),
           ),
-        )
+        ),
+        isLoading ? Container(
+          width: double.infinity,
+          height: media.height * 1,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(.5)
+          ),
+          child: const Center(
+            child: CircularProgressIndicator(),
+          ),
+        ) : const SizedBox()
       ],
     );
   }
@@ -113,7 +124,19 @@ class _LoginViewState extends State<LoginView> {
   }
 
   login() {
-    Navigator.of(context).pushNamedAndRemoveUntil('dashboard', (route) => false);
+    FocusManager.instance.primaryFocus?.unfocus();
+    setState(() {
+      isLoading = true;
+    });
+    Future.delayed(
+      const Duration(
+        seconds: 2
+      ), () {
+        setState(() {
+          isLoading = true;
+        });
+        Navigator.of(context).pushNamedAndRemoveUntil('dashboard', (route) => false);
+      });
   }
 
 }
