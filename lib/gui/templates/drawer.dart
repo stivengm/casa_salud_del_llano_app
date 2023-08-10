@@ -13,7 +13,6 @@ class DrawerWidget extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            // color: Colors.tealAccent,
             child: const DrawerHeader(
               child: CircleAvatar(),
             ),
@@ -27,10 +26,18 @@ class DrawerWidget extends StatelessWidget {
                     Icons.chevron_right_rounded,
                     size: 30.0,
                   ),
+                  onTap: () => Navigator.popAndPushNamed(context, 'stores'),
+                ),
+                ListTile(
+                  title: const Text("Productos"),
+                  trailing: const Icon(
+                    Icons.chevron_right_rounded,
+                    size: 30.0,
+                  ),
                   onTap: () {},
                 ),
                 ListTile(
-                  title: Text("Productos"),
+                  title: const Text("Agregar usuarios"),
                   trailing: const Icon(
                     Icons.chevron_right_rounded,
                     size: 30.0,
@@ -42,7 +49,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-            child: PrimaryButton(text: 'Cerrar sesión', onPressed: () { }),
+            child: PrimaryButton(text: 'Cerrar sesión', onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil('login', (route) => false)),
           )
         ],
       ),
