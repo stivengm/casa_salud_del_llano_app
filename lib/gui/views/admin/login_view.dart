@@ -114,6 +114,7 @@ class _LoginViewState extends State<LoginView> {
 
   login() {
     print("Holaaaaa");
+    Navigator.of(context).pushNamedAndRemoveUntil('dashboard', (route) => false);
   }
 
 }
