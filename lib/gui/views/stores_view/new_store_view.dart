@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:casa_salud_del_llano_app/gui/widgets/primary_button.dart';
+
 class NewStoreView extends StatefulWidget {
   const NewStoreView({ Key? key }) : super( key: key );
 
@@ -61,6 +63,8 @@ class _NewStoreViewState extends State<NewStoreView> {
                     debugPrint(value);
                   },
                 ),
+                const SizedBox(height: 20.0),
+                PrimaryButton(text: 'Guardar', onPressed: () {})
               ],
             ),
           ),
