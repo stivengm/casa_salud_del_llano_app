@@ -15,15 +15,15 @@ class PrimaryButton extends StatelessWidget {
         style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(12.0)),
           foregroundColor: MaterialStateProperty.all<Color>(AppStyle.whiteColor),
-          backgroundColor: MaterialStateProperty.all<Color>(AppStyle.primaryColor),
+          backgroundColor: MaterialStateProperty.all<Color>((onPressed != null) ? AppStyle.primaryColor : AppStyle.greyColor),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50.0),
-              side: const BorderSide(color: AppStyle.primaryColor)
+              side: BorderSide(color: (onPressed != null) ? AppStyle.primaryColor : AppStyle.greyColor)
             )
           )
         ),
-        onPressed: onPressed,
+        onPressed: (onPressed != null) ? onPressed : null,
         child: Text(text, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: AppStyle.whiteColor)),
       ),
     );
