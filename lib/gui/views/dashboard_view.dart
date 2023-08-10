@@ -13,13 +13,22 @@ class DashboardView extends StatelessWidget {
   }
 
   Widget _body(context) {
-    return Column(
-      children: [
-        const SizedBox(height: 20.0),
-        PrimaryButton(text: 'Tiendas', onPressed: () => Navigator.pushNamed(context, 'stores')),
-        const SizedBox(height: 20.0),
-        PrimaryButton(text: 'Productos', onPressed: () => Navigator.pushNamed(context, 'products'))
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Total tiendas: 4"),
+          const SizedBox(height: 20.0),
+          Text("Total productos: 100"),
+          const SizedBox(height: 20.0),
+          Text("Total productos en tiendas: 300"),
+          const SizedBox(height: 20.0),
+          PrimaryButton(text: 'Tiendas', onPressed: () => Navigator.pushNamed(context, 'stores')),
+          const SizedBox(height: 20.0),
+          PrimaryButton(text: 'Productos', onPressed: () => Navigator.pushNamed(context, 'products'))
+        ],
+      ),
     );
   }
 
