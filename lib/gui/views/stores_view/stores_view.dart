@@ -14,7 +14,7 @@ class StoresView extends StatelessWidget {
         child: const Icon(
           Icons.add
         ),
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, 'newStore'),
       ),
     );
   }
