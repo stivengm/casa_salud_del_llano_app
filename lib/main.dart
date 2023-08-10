@@ -1,3 +1,4 @@
+import 'package:casa_salud_del_llano_app/gui/app_style.dart';
 import 'package:flutter/material.dart';
 
 import 'package:casa_salud_del_llano_app/core/config/paths.dart';
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'Casa Salud Del Llamo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: AppStyle.primaryColor,
+          secondary: AppStyle.primaryColor,
+        ),
       ),
       routes: routesApp(),
       initialRoute: 'login',
