@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ggp0.casa_salud_del_llano_app">
    <application
-        android:label="casa_salud_del_llano_app"
+        android:label="Casa Salud del Llano"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
