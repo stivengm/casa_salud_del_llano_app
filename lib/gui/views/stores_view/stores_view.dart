@@ -9,7 +9,7 @@ class StoresView extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Droguerías"),
       ),
-      body: _body(),
+      body: _body(context),
       floatingActionButton: FloatingActionButton(
         child: const Icon(
           Icons.add
@@ -19,7 +19,7 @@ class StoresView extends StatelessWidget {
     );
   }
 
-  Widget _body() {
+  Widget _body(context) {
     return ListView(
       children: [
         ListTile(
@@ -30,17 +30,17 @@ class StoresView extends StatelessWidget {
             Icons.chevron_right_rounded,
             size: 30.0,
           ),
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, 'infoStore'),
         ),
         ListTile(
           contentPadding: const EdgeInsets.only(left: 23.0, right: 20.0),
-          title: const Text("Pararito"),
+          title: const Text("INACTIVA - Pajarito"),
           subtitle: const Text("Carrera 4"),
           trailing: const Icon(
             Icons.chevron_right_rounded,
             size: 30.0,
           ),
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, 'infoStore'),
         ),
         ListTile(
           contentPadding: const EdgeInsets.only(left: 23.0, right: 20.0),
@@ -50,7 +50,7 @@ class StoresView extends StatelessWidget {
             Icons.chevron_right_rounded,
             size: 30.0,
           ),
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, 'infoStore'),
         ),
       ],
     );

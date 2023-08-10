@@ -18,7 +18,7 @@ class DashboardView extends StatelessWidget {
         const SizedBox(height: 20.0),
         PrimaryButton(text: 'Tiendas', onPressed: () => Navigator.pushNamed(context, 'stores')),
         const SizedBox(height: 20.0),
-        PrimaryButton(text: 'Productos', onPressed: () => Navigator.pushNamed(context, 'stores'))
+        PrimaryButton(text: 'Productos', onPressed: () => Navigator.pushNamed(context, 'products'))
       ],
     );
   }
