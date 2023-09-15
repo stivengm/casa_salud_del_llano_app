@@ -21,6 +21,9 @@ class DashboardView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+            
+          ),
           const Text("Total tiendas: 4"),
           const SizedBox(height: 20.0),
           const Text("Total productos: 100"),
