@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:casa_salud_del_llano_app/gui/templates/drawer.dart';
 import 'package:casa_salud_del_llano_app/gui/widgets/primary_button.dart';
+import 'package:casa_salud_del_llano_app/gui/views/dashboard/chart_stores_products.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({ Key? key }) : super( key: key );
@@ -21,8 +22,14 @@ class DashboardView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            
+          Column(
+            children: [
+              Text("Productos en tiendas"),
+              Container(
+                width: MediaQuery.of(context).size.width * 1,
+                child: const ChartStoresProducts()
+              ),
+            ],
           ),
           const Text("Total tiendas: 4"),
           const SizedBox(height: 20.0),
