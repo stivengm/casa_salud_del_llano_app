@@ -10,7 +10,10 @@ class DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Dashboard"),
+        centerTitle: true,
+      ),
       drawer: const DrawerWidget(),
       body: _body(context),
     );
