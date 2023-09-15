@@ -11,10 +11,12 @@ class DrawerWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: double.infinity,
-            child: const DrawerHeader(
-              child: CircleAvatar(),
+          DrawerHeader(
+            child: CircleAvatar(
+              radius: 80,
+              child: ClipOval(
+                child: Image.asset('assets/casa_salud_del_llano.jpg'),
+              ),
             ),
           ),
           Expanded(
