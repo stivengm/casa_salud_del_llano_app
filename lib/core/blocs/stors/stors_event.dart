@@ -6,3 +6,8 @@ abstract class StorsEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class HandleStors extends StorsEvent {
+  final List<StorsModel>? stors;
+  const HandleStors(this.stors);
+}
