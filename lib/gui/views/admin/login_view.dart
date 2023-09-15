@@ -1,6 +1,5 @@
 import 'package:casa_salud_del_llano_app/gui/app_style.dart';
 import 'package:casa_salud_del_llano_app/gui/widgets/curved_login_widget.dart';
-import 'package:casa_salud_del_llano_app/gui/widgets/curved_test.dart';
 import 'package:casa_salud_del_llano_app/gui/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
