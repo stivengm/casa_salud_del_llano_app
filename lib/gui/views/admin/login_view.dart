@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:casa_salud_del_llano_app/core/blocs/stors/stors_bloc.dart';
 import 'package:casa_salud_del_llano_app/gui/app_style.dart';
 import 'package:casa_salud_del_llano_app/gui/widgets/curved_login_widget.dart';
 import 'package:casa_salud_del_llano_app/gui/widgets/primary_button.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({ Key? key }) : super( key: key );
@@ -27,7 +29,7 @@ class _LoginViewState extends State<LoginView> {
   }
 
   Widget _body() {
-    Size _media = MediaQuery.of(context).size;
+    Size media = MediaQuery.of(context).size;
     return SizedBox(
       height: double.infinity,
       child: GestureDetector(
@@ -35,9 +37,9 @@ class _LoginViewState extends State<LoginView> {
         child: SingleChildScrollView(
           child: Stack(
             children: [
-              Container(
-                width: _media.width * 1,
-                height: _media.height * 1,
+              SizedBox(
+                width: media.width * 1,
+                height: media.height * 1,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -69,8 +71,8 @@ class _LoginViewState extends State<LoginView> {
               Center(
                 // margin: const EdgeInsets.only(top: 350.0, right: 28.0, left: 28.0),
                 child: Container(
-                  width: _media.width * 1,
-                  height: _media.height * 1,
+                  width: media.width * 1,
+                  height: media.height * 1,
                   // color: Colors.red,
                   margin: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
@@ -265,14 +267,17 @@ class _LoginViewState extends State<LoginView> {
     return (userName != '' && pass != '') ?  false : true;
   }
 
-  login() {
-    FocusManager.instance.primaryFocus?.unfocus();
-    setState(() {
-      isLoading = true;
-    });
+  login() async {
+    final storesBloc = BlocProvider.of<StorsBloc>(context);
+    storesBloc.getStors();
+    // await homeBloc.getStors();
+    // FocusManager.instance.primaryFocus?.unfocus();
+    // setState(() {
+    //   isLoading = true;
+    // });
     Future.delayed(
       const Duration(
-        seconds: 2
+        seconds: 3
       ), () {
         setState(() {
           isLoading = true;
