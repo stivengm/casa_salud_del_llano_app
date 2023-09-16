@@ -23,7 +23,6 @@ class StorsBloc extends Bloc<StorsEvent, StorsState> {
       final jsonStors = jsonDecode(response.body);
       final List<StorsModel> stors = jsonStors.map<StorsModel>((m) => StorsModel.fromJson(Map<String, dynamic>.from(m))).toList();
       add( HandleStors(stors) );
-      print(stors[0].name);
     }
   }
 }
