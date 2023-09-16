@@ -9,7 +9,25 @@ class ProductsView extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Productos"),
       ),
-      body: const Placeholder(),
+      body: ListView(
+        children: [
+          ListTile(
+            title: const Text("Acetaminofén"),
+            trailing: IconButton(
+              icon: const Icon(
+                Icons.add
+              ),
+              onPressed: () {},
+            ),
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(
+          Icons.add
+        ),
+        onPressed: () {},
+      ),
     );
   }
 }
