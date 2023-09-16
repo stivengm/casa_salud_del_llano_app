@@ -1,58 +1,42 @@
 import 'package:flutter/material.dart';
 
+import 'package:casa_salud_del_llano_app/core/blocs/stors/stors_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 class StoresView extends StatelessWidget {
-  const StoresView({ Key? key }) : super( key: key );
+  const StoresView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Droguerías"),
-      ),
-      body: _body(context),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.add
-        ),
-        onPressed: () => Navigator.pushNamed(context, 'newStore'),
-      ),
-    );
-  }
-
-  Widget _body(context) {
-    return ListView(
-      children: [
-        ListTile(
-          contentPadding: const EdgeInsets.only(left: 23.0, right: 20.0),
-          title: const Text("Aguazul Casanare"),
-          subtitle: const Text("Carrera 4"),
-          trailing: const Icon(
-            Icons.chevron_right_rounded,
-            size: 30.0,
+    return BlocBuilder<StorsBloc, StorsState>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text("Droguerías"),
           ),
-          onTap: () => Navigator.pushNamed(context, 'infoStore'),
-        ),
-        ListTile(
-          contentPadding: const EdgeInsets.only(left: 23.0, right: 20.0),
-          title: const Text("INACTIVA - Pajarito"),
-          subtitle: const Text("Carrera 4"),
-          trailing: const Icon(
-            Icons.chevron_right_rounded,
-            size: 30.0,
+          body: state.stors!.isNotEmpty
+          ? ListView.builder(
+            itemCount: state.stors!.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                contentPadding: const EdgeInsets.only(left: 23.0, right: 20.0),
+                title: Text(state.stors![index].name),
+                subtitle: Text(state.stors![index].address),
+                trailing: const Icon(
+                  Icons.chevron_right_rounded,
+                  size: 30.0,
+                ),
+                onTap: () => Navigator.pushNamed(context, 'infoStore'),
+              );
+            },
+          )
+          : const Text("no hay tiendas"),
+          floatingActionButton: FloatingActionButton(
+            child: const Icon(Icons.add),
+            onPressed: () => Navigator.pushNamed(context, 'newStore'),
           ),
-          onTap: () => Navigator.pushNamed(context, 'infoStore'),
-        ),
-        ListTile(
-          contentPadding: const EdgeInsets.only(left: 23.0, right: 20.0),
-          title: const Text("Yopal"),
-          subtitle: const Text("Carrera 4"),
-          trailing: const Icon(
-            Icons.chevron_right_rounded,
-            size: 30.0,
-          ),
-          onTap: () => Navigator.pushNamed(context, 'infoStore'),
-        ),
-      ],
+        );
+      },
     );
   }
 }

@@ -11,7 +11,7 @@ class DashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dashboard"),
+        title: const Text("Dashboard"),
         centerTitle: true,
       ),
       drawer: const DrawerWidget(),
@@ -26,9 +26,11 @@ class DashboardView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Productos en tiendas"),
-              Container(
+              Text("Productos en tiendas", style: Theme.of(context).textTheme.headlineMedium!.copyWith( fontSize: 25.0 ),),
+              const SizedBox(height: 20.0),
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 1,
                 child: const ChartStoresProducts()
               ),
